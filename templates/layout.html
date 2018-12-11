@@ -12,7 +12,7 @@
             <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}" > 
 
             {% if title %}
-                <title> This is {{title}} </title>
+                <title> UWIKA HOTEL - {{title}} </title>
             {% else %}
                 <title> This is ... BLEH GAGAL </title>
             {% endif %}
@@ -23,30 +23,65 @@
         <header class="site-header">
             <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
                 <div class="container">
-                <a class="navbar-brand mr-4" href="/">Hotel</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarToggle">
-                    <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="/">Home</a>
-                    <a class="nav-item nav-link" href="/about">About</a>
+                    <!-- Navbar Left Side -->
+                    <a class="navbar-brand mr-4" href="/">UWIKA HOTEL</a>
+                    <button class="navbar-toggler md-4 "  type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarToggle">
+                        <div class="navbar-nav mr-auto">
+                            <a class="nav-item nav-link" href="/">Home</a>
+                            <a class="nav-item nav-link" href="{{url_for('home')}}">About</a>
+                            <li class="dropdown">                    
+                                <a href="#" class="dropdown-toggle nav-link nav-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <hr>
+                                    <li class="dropdown-header">Nav header</li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </div>
+                        <!-- Navbar Right Side -->
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link" href="/login">Login</a>
+                            <a class="nav-item nav-link" href="/register">Register</a>
+                        </div>
                     </div>
-                    <!-- Navbar Right Side -->
-                    <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/login">Login</a>
-                    <a class="nav-item nav-link" href="/register">Register</a>
-                    </div>
-                </div>
                 </div>
             </nav>
         </header>
-                  
+
+        <!-- Content -->
         <div class="container">  
+            <div class="col-md-auto">
             {% block content %}
-            <!-- All Contents-->
+                <!-- All Contents-->
             {% endblock content %}
+            </div>
         </div>
+        
+        <!-- footer -->
+        <footer class="modal-footer">
+            <div class="container col-md-auto">
+                <h2>CONTACT US</h2>
+                <ul>
+                    <li>INSTAGRAM : IG</li>
+                    <li>FACEBOOK  : FB</li>
+                    <li>WHATSAPP  : WA</li>
+                </ul>
+            </div>
+        </footer>
+        <!-- <div class="container footer-site">
+            <footer class="footer">
+                <p align="center" font-size="20px">MW @ COPYRIGHT</p>
+                <p align="center" font-size="20px">2018</p>
+            </div>
+        </div> -->
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
