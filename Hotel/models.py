@@ -58,7 +58,7 @@ class restaurantTransaction(db.Model):
         return f"restaurantTransaction('{self.time}', '{self.totalPrice}')"
 
 class roomTransaction(db.Model):
-    id          = db.Column(db.Integer, primary_key = True)
+    id          = db.Column(db.Integer, primary_key = True,nullable=False)
     noKTP       = db.Column(db.String(16),db.ForeignKey('user.noKTP'))
     checkIn     = db.Column(db.DateTime,nullable = False,default = datetime.utcnow)
     checkOut    = db.Column(db.DateTime,nullable = False,default = datetime.utcnow)
@@ -69,32 +69,25 @@ class roomTransaction(db.Model):
         return f"roomTransaction('{self.id}', '{self.checkIn}', '{self.checkOut}', '{self.extraBed}','{self.roomPrice}')"
 
 class Food(db.Model):
-    code        = db.Column(db.String(10), primary_key=True, nullable=False)
-    nama        = db.Column(db.String(30), nullable = False)
+    id          = db.Column(db.String(10), primary_key=True, nullable=False)
+    name        = db.Column(db.String(30), nullable = False)
     price       = db.Column(db.Integer, nullable = False)
 
     def __repr__(self):
-        return f"Food('{self.code}', '{self.name}', '{self.price}')"
+        return f"Food('{self.id}', '{self.name}', '{self.price}')"
 
 class Beverage(db.Model):
-    code        = db.Column(db.String(10), primary_key=True, nullable=False)
-    nama        = db.Column(db.String(30), nullable = False)
+    id          = db.Column(db.String(10), primary_key=True, nullable=False)
+    name        = db.Column(db.String(30), nullable = False)
     price       = db.Column(db.Integer, nullable = False)
 
     def __repr__(self):
-        return f"Beverage('{self.code}', '{self.name}', '{self.price}')"
+        return f"Beverage('{self.id}', '{self.name}', '{self.price}')"
 
 class Laundry(db.Model):
-    id          = db.Column(db.Integer, primary_key = True, nullable=False)
-    noKTP       = db.Column(db.String(16),db.ForeignKey('user.noKTP'))
-    baju        = db.Column(db.Integer, nullable = False)
-    celana      = db.Column(db.Integer, nullable = False)
-    jaket       = db.Column(db.Integer, nullable = False)
-    pakaianDalam= db.Column(db.Integer, nullable = False)
-    softener    = db.Column(db.Integer, nullable = False)
-    perfume     = db.Column(db.Integer, nullable = False)
-    dateIn      = db.Column(db.DateTime,nullable = False)
-    dateOut     = db.Column(db.DateTime,nullable = False)
+    id          = db.Column(db.String(10), primary_key=True, nullable=False)
+    name        = db.Column(db.String(30), nullable = False)
+    price       = db.Column(db.Integer, nullable = False)
 
     def __repr__(self):
         return f"Beverage('{self.id}', '{self.baju}', '{self.celana}','{self.jaket}','{self.pakaianDalam}','{self.softener}','{self.perfume}','{self.dateIn}','{self.dateOut}')"

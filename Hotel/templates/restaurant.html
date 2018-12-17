@@ -1,0 +1,63 @@
+{% extends "layout1.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Restaurant</h1>
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Food</div>
+            </div>
+
+            <!-- Table -->
+            <table class="table">
+                <table style="width:100%">
+                    <tr>
+                        <th><span style="color : red">Menu Makanan</span></th>
+                        <th><span style="color : red">Harga</span></th>
+                        <th><span style="color : red">Jumlah Pesanan</span></th>
+                    </tr>
+                    {% for food in Foods.query.all() %}
+                        <tr>
+                            <!-- <th>{{ food.id }}</th> -->
+                            <th>{{ food.name }}</th>
+                            <th>{{ food.price }}</th>
+                            <th><input type="number" class="form-control" name="foodquantity{{ food.id }}"" min="0" max="10"></th>
+                        </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="container">    
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Beverages</div>
+                </div>
+    
+                <!-- Table -->
+                <table class="table">
+                    <table style="width:100%">
+                        <tr>
+                            <th><span style="color : red">Menu Beverages</span></th>
+                            <th><span style="color : red">Harga</span></th>
+                            <th><span style="color : red">Jumlah Pesanan</span></th>
+                        </tr>
+                        {% for beverage in Beverages.query.all() %}
+                            <tr>
+                                <!-- <th>{{ beverage.id }}</th> -->
+                                <th>{{ beverage.name }}</th>
+                                <th>{{ beverage.price }}</th>
+                                <th><input type="number" class="form-control" name="beveragequantity{{ beverage.id }}" min="0" max="10"></th>
+                            </tr>
+                        {% endfor %}
+                </table>
+            </div>
+    </div>
+    <div class="container">
+        <br>
+        <h3>Place your order here</h3>
+        <button type="button" class="btn btn-outline-info">Confirm</button>
+    </div>
+    <br>
+{% endblock content %}

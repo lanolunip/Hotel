@@ -1,0 +1,43 @@
+{% extends "layout1.html" %}
+{% block content %}
+<div class="container">
+        <h1>LAUNDRY</h1>
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">JENIS LAUNDRY</div>
+            </div>
+
+            <!-- Table -->
+            <table class="table">
+                <table style="width:100%">
+                    <tr>
+                        <th><span style="color : red">Jenis Layanan</span></th>
+                        <th><span style="color : red">Harga/Kg</span></th>
+                        <th><span style="color : red">Jumlah</span></th>
+                    </tr>
+                    <tr>
+                        {% for laundry in Laundry.query.all() %}
+                            <tr>
+                                <!-- <th>{{ laundry.id }}</th> -->
+                                <th>{{ laundry.name }}</th>
+                                <th>{{ laundry.price }}</th>
+                                <th><input type="number" class="form-control" id="jumlahKG{{ laundry.id }}" min="0" max="10"></th>
+                            </tr>
+                        {% endfor %}
+                    </tr>
+            </table>
+        </div>
+    </div>
+<div class="container">
+        <br>
+        <h3>Place your order here</h3>
+        <!-- {% for laundry in Laundry.query.all() %}
+            { {{ form.totalBiaya }} += document.getElementById(jumlahKG{{ laundry.id }}) } 
+        {% endfor %} -->
+        <div class="form-group">    
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </div>
+    <br>
+{% endblock content %}

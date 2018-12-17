@@ -11,17 +11,19 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+      <img style="width:1200px;height:400px;" src="{{ url_for('static',filename='carousel_picture/877952.jpg') }}" alt="Image"> 
+      <!-- "https://placehold.it/1200x400?text=IMAGE" -->
       <div class="carousel-caption">
-        <h3>Room 1 </h3>
-        <p>Executive Room</p>
+        <h3>FRONT VIEW</h3>
+        <p>Glorious Entrance</p>
       </div>      
     </div>
 
     <div class="item">
-      <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+      <img style="width:1200px;height:400px;" src="{{ url_for('static',filename='carousel_picture/hotel-room-2.jpg') }}" alt="Image">
+      <!-- https://placehold.it/1200x400?text=Another Image Maybe" -->
       <div class="carousel-caption">
-        <h3>Tons Of Facility $</h3>
+        <h3>Tons Of Facility</h3>
         <p>Ready To Serve You</p>
       </div>      
     </div>
@@ -39,22 +41,25 @@
 </div>
 
 <div class="container text-center">    
-<h3>What We Do</h3><br>
+<h3>What We Have</h3><br>
 <div class="row">
   <div class="col-sm-4">
-    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    <p>Current Project</p>
+    <img style="width:100%;height:80px;" src="{{ url_for('static',filename='carousel_picture/6c2e2eae60910cbf0dbae1f02382392f.jpg') }}" class="img-responsive" alt="Image">
+    <p>Restaurant</p>
   </div>
   <div class="col-sm-4"> 
-    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    <p>Project 2</p>    
+    <img style="width:100%;height:80px;" src="{{ url_for('static',filename='carousel_picture/laun.jpg') }}" class="img-responsive" alt="Image">
+    <p>Laundry</p>  
   </div>
   <div class="col-sm-4">
     <div class="well">
-     <p>Some text..</p>
+     <p>Contact:</p>
+     <p>IG: anything</p>
+     <p>FB: anything</p>
     </div>
     <div class="well">
-     <p>Some text..</p>
+     <p>Alamat:</p>
+     <p> Jl. .........No.11</p>
     </div>
   </div>
 </div>
