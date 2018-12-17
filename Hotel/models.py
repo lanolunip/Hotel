@@ -16,6 +16,7 @@ class User(db.Model,UserMixin):
     image_file              = db.Column(db.String(20),nullable=False, default='default.jpg')
     password                = db.Column(db.String(60),nullable=False)
     NIP                     = db.Column(db.String(20),unique=True)
+    saldo                   = db.Column(db.Integer, nullable=False, default=0)
     # posts       = db.relationship('Post',backref='author',lazy=True)
 
     def __repr__(self):

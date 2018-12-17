@@ -69,8 +69,8 @@
         {% if current_user.is_authenticated %}
         <li><a href="{{ url_for('account') }}"><span class="glyphicon glyphicon-user"></span> Account</a></li>
         <li><a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-        {% else %}
         <li><a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+        {% else %}
         <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         {% endif %}
       </ul>
