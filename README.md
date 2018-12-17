@@ -5,6 +5,7 @@ package yang perlu :
 - (Sudah terinstall setidaknya versi python 3.6)
 - sudo apt-get install python3-pip
 - sudo pip3 install virtualenv
+- XAMPP (untuk localhost)
 
 #masuk ke dalam folder Hotel kemudian ketik di terminal (sudah dalam folder Hotel)
 - source bin/activate
@@ -19,3 +20,6 @@ package yang perlu :
 - pip3 install Flask-WTF
 - pip3 install WTForms
 - pip3 install pillow
+
+#kemudian untuk menjalankan program
+- masuk kedalam folder Hotel, dan jalankan run.py
