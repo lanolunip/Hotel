@@ -26,7 +26,7 @@ def makudonarudo():
 @app.route('/register', methods=['GET','POST'])
 @login_required
 def register():
-    if current_user.is_authenticated:
+    if current_user.is_authenticated and current_user.tipeUser != 'Receptionist':
         return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():

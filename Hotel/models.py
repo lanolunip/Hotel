@@ -15,7 +15,7 @@ class User(db.Model,UserMixin):
     idLine                  = db.Column(db.String(20),unique=True, nullable=False)
     image_file              = db.Column(db.String(20),nullable=False, default='default.jpg')
     password                = db.Column(db.String(60),nullable=False)
-    NIP                     = db.Column(db.String(20),unique=True)
+    NIP                     = db.Column(db.String(20))
     saldo                   = db.Column(db.Integer, nullable=False, default=0)
     # posts       = db.relationship('Post',backref='author',lazy=True)
 
